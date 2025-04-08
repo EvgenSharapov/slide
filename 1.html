@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивный сайт</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFFBF9;
+      color: #2D3047;
+      font-family: 'Wix Madefor Text', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Шапка */
+    header {
+      position: fixed;
+      width: 100%;
+      min-height: 80px;
+      background: #FFFBF9;
+      border-bottom: 1px solid #DACFCA;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 5%;
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Wix Madefor Text';
+      font-weight: 800;
+      font-size: clamp(16px, 1.2vw, 18px);
+      color: #2D3047;
+      white-space: nowrap;
+    }
+
+    nav {
+      order: 3;
+      width: 100%;
+      margin: 15px 0 0;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      gap: clamp(10px, 2vw, 40px);
+    }
+
+    nav a {
+      font-size: clamp(14px, 1.1vw, 16px);
+      color: #556877;
+      position: relative;
+      padding: 10px 0;
+      display: block;
+    }
+
+    nav a:hover {
+      color: #A3887B;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #A3887B;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .phone {
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(20px, 2vw, 30px);
+      color: #2D3047;
+      white-space: nowrap;
+    }
+
+    .contact-link {
+      font-size: clamp(12px, 0.9vw, 14px);
+      color: #A3887B;
+      transition: color 0.3s ease;
+    }
+
+    /* Основной контент */
+    main {
+      width: 100%;
+      padding: 100px 5% 60px;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    .slider-content {
+      width: 100%;
+      max-width: 621px;
+      margin-bottom: 40px;
+    }
+
+    .slider-title {
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(40px, 8vw, 100px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .club-house-title {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 0;
+    }
+
+    .title-figure {
+      display: none;
+    }
+
+    .line1, .line2 {
+      font-size: clamp(20px, 3vw, 30px);
+      display: block;
+    }
+
+    .slider-image-container {
+      width: 100%;
+      max-width: 660px;
+      aspect-ratio: 660/740;
+      margin: 40px auto;
+      background: #D9D9D9;
+      border: 15px solid #FFFFFF;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .infrastructure-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 24px);
+      color: #A3887B;
+      margin: 20px 0;
+    }
+
+    .slider-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 239px;
+      height: 60px;
+      background: #A3887B;
+      border-radius: 1px;
+      font-family: 'Wix Madefor Text';
+      font-weight: 500;
+      font-size: 16px;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      margin: 20px 0;
+    }
+
+    /* Десктопная версия */
+    @media (min-width: 992px) {
+      header {
+        height: 80px;
+        padding: 0 5%;
+      }
+
+      .header-container {
+        flex-wrap: nowrap;
+      }
+
+      nav {
+        order: initial;
+        width: auto;
+        margin: 0 40px;
+      }
+
+      nav ul {
+        flex-wrap: nowrap;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 80px 5% 60px;
+        margin-top: 80px;
+      }
+
+      .slider-content {
+        grid-column: 1;
+        margin-bottom: 0;
+      }
+
+      .slider-image-container {
+        grid-column: 2;
+        margin: 0;
+        position: relative;
+      }
+
+      .club-house-title {
+        position: absolute;
+        left: 0;
+        top: -100px;
+        padding-left: 110px;
+      }
+
+      .title-figure {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 100px;
+      }
+
+      .title-square {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 60px;
+        top: -5px;
+        background: #DACFCA;
+        border-radius: 1px;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      .title-square::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: -80px;
+        top: -10px;
+        background: #A3887B;
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+    /* Большие экраны */
+    @media (min-width: 1440px) {
+      main {
+        padding: 80px 10% 60px;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .header-container {
+        padding: 0 375px;
+      }
+
+      main {
+        padding: 80px 375px 60px;
+      }
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 767px) {
+      nav ul {
+        gap: 15px;
+      }
+
+      .slider-image-container {
+        border-width: 10px;
+      }
+
+      .slider-button {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      .contacts {
+        align-items: center;
+        text-align: center;
+      }
+
+      .slider-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <span class="logo-line1">Логотип</span>
+      <span class="logo-line2">Компании</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О проекте</a></li>
+        <li><a href="#">Квартиры</a></li>
+        <li><a href="#">Инфраструктура</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="contacts">
+      <div class="phone">+7 (123) 456-78-90</div>
+      <a href="#" class="contact-link">Заказать звонок</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="club-house-title">
+    <div class="title-figure">
+      <div class="title-square"></div>
+    </div>
+    <span class="line1">Клубный дом</span>
+    <span class="line2">премиум-класса</span>
+  </div>
+
+  <div class="slider-content">
+    <h1 class="slider-title">Уютное пространство для жизни</h1>
+    <p>Описание преимуществ и особенностей проекта</p>
+
+    <a href="#" class="infrastructure-link">
+      Инфраструктура
+      <span class="infrastructure-arrow"></span>
+    </a>
+
+    <a href="#" class="slider-button">Узнать больше</a>
+  </div>
+
+  <div class="slider-image-container">
+    <img src="img/7_Photo%20-%203.png" alt="Квартира" class="slider-image">
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клубный дом «Южная жемчужина»</title>
+  <style>
+    /* Базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFFBF9;
+      color: #2D3047;
+      font-family: 'Wix Madefor Text', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    /* Шапка */
+    header {
+      position: fixed;
+      width: 100%;
+      min-height: 80px;
+      background: #FFFBF9;
+      border-bottom: 1px solid #DACFCA;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 5%;
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1920px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Wix Madefor Text';
+      font-weight: 800;
+      font-size: clamp(16px, 1.2vw, 18px);
+      color: #2D3047;
+      white-space: nowrap;
+    }
+
+    .logo-line1, .logo-line2 {
+      display: block;
+      line-height: 1.2;
+    }
+
+    nav {
+      order: 3;
+      width: 100%;
+      margin: 15px 0 0;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      gap: clamp(10px, 2vw, 20px);
+    }
+
+    nav a {
+      font-size: clamp(14px, 1.1vw, 16px);
+      color: #556877;
+      position: relative;
+      padding: 10px 0;
+      display: block;
+    }
+
+    nav a:hover {
+      color: #A3887B;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #A3887B;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .phone {
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 30px);
+      color: #2D3047;
+      white-space: nowrap;
+    }
+
+    .contact-link {
+      font-size: clamp(12px, 0.9vw, 14px);
+      color: #A3887B;
+      transition: color 0.3s ease;
+    }
+
+    /* Основной слайдер */
+    .slider {
+      width: 100%;
+      padding: 100px 5% 60px;
+      margin-top: 80px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slider-dark-bg {
+      display: none;
+    }
+
+    .slider-content {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 40px;
+      order: 2;
+    }
+
+    .slider-title {
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(32px, 6vw, 80px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .title-line {
+      display: block;
+    }
+
+    .club-house-title {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 0;
+      order: 1;
+    }
+
+    .title-figure {
+      display: none;
+    }
+
+    .line1, .line2 {
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 30px);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .slider-image-container {
+      width: 100%;
+      max-width: 660px;
+      aspect-ratio: 660/740;
+      margin: 40px auto;
+      background: #D9D9D9;
+      border: 15px solid #FFFFFF;
+      border-radius: 1px;
+      overflow: hidden;
+      order: 3;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .infrastructure-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Alumni Sans';
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 24px);
+      color: #A3887B;
+      margin: 20px 0;
+      order: 4;
+    }
+
+    .infrastructure-line {
+      display: none;
+    }
+
+    .slider-button, .corner-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 239px;
+      height: 60px;
+      background: #A3887B;
+      border-radius: 1px;
+      font-family: 'Wix Madefor Text';
+      font-weight: 500;
+      font-size: 16px;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      margin: 10px 0;
+    }
+
+    .slider-button {
+      order: 5;
+    }
+
+    .corner-button {
+      order: 6;
+      background: #2D3047;
+    }
+
+    /* Десктопная версия */
+    @media (min-width: 992px) {
+      header {
+        height: 80px;
+        padding: 0 5%;
+      }
+
+      .header-container {
+        flex-wrap: nowrap;
+      }
+
+      nav {
+        order: initial;
+        width: auto;
+        margin: 0 40px;
+      }
+
+      nav ul {
+        flex-wrap: nowrap;
+      }
+
+      .slider {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 120px 5% 80px;
+      }
+
+      .slider-content {
+        grid-column: 1;
+        order: initial;
+        margin-bottom: 0;
+      }
+
+      .club-house-title {
+        position: absolute;
+        left: 5%;
+        top: 200px;
+        padding-left: 110px;
+        order: initial;
+      }
+
+      .title-figure {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+      }
+
+      .title-square {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 40px;
+        top: 10px;
+        background: #DACFCA;
+        border-radius: 1px;
+        z-index: 2;
+      }
+
+      .title-circle {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 0;
+        top: 0;
+        background: #A3887B;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .slider-image-container {
+        grid-column: 2;
+        margin: 0;
+        position: relative;
+        order: initial;
+      }
+
+      .infrastructure-link {
+        position: absolute;
+        right: 5%;
+        bottom: 100px;
+        order: initial;
+      }
+
+      .infrastructure-line {
+        display: block;
+        position: absolute;
+        width: 40%;
+        height: 1px;
+        right: 5%;
+        bottom: 120px;
+        background: #A3887B;
+      }
+
+      .slider-button {
+        position: absolute;
+        left: 5%;
+        bottom: 100px;
+        order: initial;
+      }
+
+      .corner-button {
+        position: absolute;
+        right: 5%;
+        bottom: 40px;
+        order: initial;
+      }
+    }
+
+    /* Большие экраны */
+    @media (min-width: 1440px) {
+      .slider {
+        padding: 120px 10% 80px;
+      }
+
+      .club-house-title {
+        left: 10%;
+      }
+
+      .infrastructure-link,
+      .infrastructure-line {
+        right: 10%;
+      }
+
+      .slider-button {
+        left: 10%;
+      }
+
+      .corner-button {
+        right: 10%;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .header-container {
+        padding: 0 375px;
+      }
+
+      .slider {
+        padding: 120px 375px 80px;
+      }
+
+      .club-house-title {
+        left: 375px;
+      }
+
+      .infrastructure-link,
+      .infrastructure-line {
+        right: 375px;
+      }
+
+      .slider-button {
+        left: 375px;
+      }
+
+      .corner-button {
+        right: 375px;
+      }
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 767px) {
+      nav ul {
+        gap: 8px;
+      }
+
+      .slider-image-container {
+        border-width: 10px;
+      }
+
+      .slider-button, .corner-button {
+        height: 50px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px;
+      }
+
+      .logo {
+        font-size: 14px;
+      }
+
+      nav ul {
+        gap: 5px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .phone {
+        font-size: 16px;
+      }
+
+      .contact-link {
+        font-size: 11px;
+      }
+
+      .slider-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <span class="logo-line1">Клубный дом</span>
+      <span class="logo-line2">«Южная жемчужина»</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">О доме</a></li>
+        <li><a href="#">Планировки</a></li>
+        <li><a href="#">Инфраструктура</a></li>
+        <li><a href="#">Отделка</a></li>
+        <li><a href="#">Оплата</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="contacts">
+      <div class="phone">8 964 196-46-73</div>
+      <a href="#" class="contact-link">Связаться со мной</a>
+    </div>
+  </div>
+</header>
+
+<div class="slider">
+  <div class="slider-dark-bg"></div>
+
+  <a href="#" class="infrastructure-link">Смотреть инфраструктуру</a>
+  <div class="infrastructure-line"></div>
+
+  <div class="slider-content">
+    <h1 class="slider-title">
+      <span class="title-line">Комфортное</span>
+      <span class="title-line">жильё бизнес-</span>
+      <span class="title-line">класса</span>
+    </h1>
+  </div>
+
+  <h2 class="club-house-title">
+    <div class="title-figure">
+      <div class="title-circle"></div>
+      <div class="title-square"></div>
+    </div>
+    <span class="line1">Клубный дом</span>
+    <span class="line2">«Южная жемчужина»</span>
+  </h2>
+
+  <a href="#" class="slider-button">Смотреть планировку</a>
+  <a href="#" class="corner-button">Квартиры в наличии</a>
+
+  <div class="slider-image-container">
+    <img src="img/7_Photo%20-%203.png" alt="Квартира" class="slider-image">
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
