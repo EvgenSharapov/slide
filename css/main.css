@@ -9,18 +9,14 @@ body {
   color: #2D3047;
   font-family: 'Wix Madefor Text', sans-serif;
   line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
 header {
   position: fixed;
   width: 100%;
-  height: 80px;
+  height: auto;
+  min-height: 80px;
   left: 0;
   top: 0;
   background: #FFFBF9;
@@ -29,60 +25,48 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px 5%;
 }
 
 .header-container {
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 375px;
+  gap: 20px;
 }
 
 .logo {
   font-family: 'Wix Madefor Text';
-  font-style: normal;
   font-weight: 800;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: clamp(16px, 1.2vw, 18px);
   color: #2D3047;
-  width: 199px;
   white-space: nowrap;
 }
 
-.logo-line1 {
-  display: block;
-}
-.logo-line2 {
-  display: block;
-}
-
 nav {
-  display: flex;
-  justify-content: center;
-  margin: 0 40px;
+  order: 3;
+  width: 100%;
+  margin: 15px 0 0;
 }
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
+  gap: clamp(15px, 2vw, 40px);
 }
 
 nav a {
-  font-family: 'Wix Madefor Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
+  font-size: clamp(14px, 1.1vw, 16px);
   color: #556877;
   position: relative;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  height: auto;
+  padding: 10px 0;
+  display: block;
 }
 
 nav a:hover {
@@ -109,207 +93,115 @@ nav a:hover::after {
   flex-direction: column;
   align-items: flex-end;
   gap: 2px;
-  min-width: 180px;
+  min-width: auto;
 }
 
 .phone {
   font-family: 'Alumni Sans';
-  font-style: normal;
   font-weight: 700;
-  font-size: 30px;
-  line-height: 110%;
+  font-size: clamp(20px, 2vw, 30px);
   text-align: right;
   color: #2D3047;
-  width: 100%;
   white-space: nowrap;
 }
 
 .contact-link {
-  font-family: 'Wix Madefor Text';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 130%;
-  text-align: right;
+  font-size: clamp(12px, 0.9vw, 14px);
   color: #A3887B;
-  width: 100%;
   transition: color 0.3s ease;
-}
-
-.contact-link:hover {
-  color: #8a7368;
 }
 
 .slider {
-  position: absolute;
-  width: 1920px;
-  height: 860px;
-  left: 0;
-  top: 80px;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 100px 5% 60px;
   background: #FFFBF9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .slider-dark-bg {
-  position: absolute;
-  width: 660px;
-  height: 425px;
-  left: 945px;
-  top: 445px;
-  background: #EDE7E5;
+  display: none;
 }
 
-.infrastructure-link {
-  position: absolute;
-  width: 270px;
-  height: 31px;
-  left: 1306px;
-  top: 760px;
-  font-family: 'Alumni Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 130%;
-  color: #A3887B;
+.slider-content {
+  width: 100%;
+  max-width: 621px;
+  margin: 0 auto 40px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: color 0.3s ease;
+  flex-direction: column;
+  gap: 30px;
+  order: 1;
 }
 
-.infrastructure-link:hover {
-  color: #8a7368;
+.slider-title {
+  font-family: 'Alumni Sans';
+  font-weight: 700;
+  font-size: clamp(40px, 8vw, 100px);
+  line-height: 90%;
+  color: #2D3047;
 }
 
-.infrastructure-link::after {
-  content: '';
+.club-house-title {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 30px;
+  order: 0;
+}
+
+.title-figure {
+  display: none;
+}
+
+.title-square {
+  display: none;
+}
+
+.line1, .line2 {
+  font-size: clamp(20px, 3vw, 30px);
   display: block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #A3887B;
-  transform: rotate(45deg);
-  border-left: none;
-  border-bottom: none;
-  transition: border-color 0.3s ease;
-}
-
-.infrastructure-link:hover::after {
-  border-color: #8a7368;
-}
-
-.infrastructure-line {
-  position: absolute;
-  width: 590px;
-  height: 1px;
-  left: 985px;
-  top: 816px;
-  background: #A3887B;
 }
 
 .slider-image-container {
-  position: absolute;
-  width: 660px;
-  height: 740px;
-  left: 985px;
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  aspect-ratio: 660/740;
+  margin: 0 auto 40px;
   background: #D9D9D9;
-  border: 25px solid #FFFFFF;
+  border: 15px solid #FFFFFF;
   border-radius: 1px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  order: 2;
 }
 
 .slider-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
 }
 
-.slider-content {
-  position: absolute;
-  width: 621px;
-  height: 287px;
-  left: 375px;
-  top: 295px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.slider-title {
+.infrastructure-link {
   font-family: 'Alumni Sans';
-  font-style: normal;
   font-weight: 700;
-  font-size: 100px;
-  line-height: 90%;
-  color: #2D3047;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #A3887B;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  order: 3;
 }
 
-.club-house-title {
-  position: absolute;
-  left: 375px;
-  top: 200px;
-  font-family: 'Alumni Sans', sans-serif;
-  padding-left: 110px;
-  z-index: 10;
-}
-
-.title-figure {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 180px;
-  height: 100px;
-}
-
-.title-square {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  left: 60px;
-  top: -5px;
-  background: #DACFCA;
-  border-radius: 1px;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.title-square::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  left: -80px;
-  top: -10px;
-  background: #A3887B;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.line1, .line2 {
-  position: relative;
-  z-index: 3;
-}
-.line1 {
-  display: block;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 110%;
-  color: #2D3047;
-}
-.line2 {
-  display: block;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 110%;
-  color: #2D3047;
-  margin-top: 5px;
+.infrastructure-line {
+  display: none;
 }
 
 .slider-button, .corner-button {
-  position: absolute;
-  width: 239px;
+  width: 100%;
+  max-width: 239px;
   height: 60px;
   background: #A3887B;
   border-radius: 1px;
@@ -317,78 +209,145 @@ nav a:hover::after {
   justify-content: center;
   align-items: center;
   font-family: 'Wix Madefor Text';
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 140%;
   color: #FFFFFF;
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  z-index: 20;
+  margin: 20px auto;
+  order: 4;
 }
 
-.slider-button {
-  left: 375px;
-  top: 652px;
-}
-
-.corner-button {
-  right:5px;
-  bottom: 40px;
-}
-
-.slider-button:hover, .corner-button:hover {
-  background: #8a7368; /* Темнее на 15% */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.slider-button:active, .corner-button:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-@media (max-width: 1919px) {
-  header, .slider {
-    width: 100%;
-  }
+@media (min-width: 992px) {
   header {
+    height: 80px;
     padding: 0 5%;
   }
-}
 
-@media (max-width: 1200px) {
-  nav ul {
-    gap: 20px;
+  .header-container {
+    flex-wrap: nowrap;
+    padding: 0;
   }
-  .slider-title {
-    font-size: 80px;
-  }
-}
 
-@media (max-width: 992px) {
-  header {
-    height: auto;
-    padding: 15px;
-    flex-wrap: wrap;
+  nav {
+    order: initial;
+    width: auto;
+    margin: 0 40px;
   }
+
   nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
   }
+
   .slider {
-    position: relative;
-    height: auto;
-    top: auto;
-    padding-top: 80px;
+    height: 860px;
+    padding: 80px 0 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
-  .slider-content, .club-house-title,
-  .slider-dark-bg, .slider-image-container,
-  .infrastructure-link, .infrastructure-line {
-    position: relative;
-    width: 100%;
-    left: auto;
-    top: auto;
-    margin: 20px 0;
+
+  .slider-content {
+    width: 621px;
+    margin: 0 0 0 375px;
+    order: initial;
+  }
+
+  .club-house-title {
+    position: absolute;
+    left: 375px;
+    top: 200px;
+    padding-left: 110px;
+    order: initial;
+  }
+
+  .title-figure {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100px;
+  }
+
+  .title-square {
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 60px;
+    top: -5px;
+    background: #DACFCA;
+    border-radius: 1px;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .title-square::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: -80px;
+    top: -10px;
+    background: #A3887B;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .slider-image-container {
+    position: absolute;
+    width: 660px;
+    height: 740px;
+    left: 985px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    order: initial;
+  }
+
+  .slider-dark-bg {
+    display: block;
+    position: absolute;
+    width: 660px;
+    height: 425px;
+    left: 945px;
+    top: 445px;
+    background: #EDE7E5;
+  }
+
+  .infrastructure-link {
+    position: absolute;
+    width: 270px;
+    left: 1306px;
+    top: 760px;
+    margin: 0;
+    order: initial;
+  }
+
+  .infrastructure-line {
+    display: block;
+    position: absolute;
+    width: 590px;
+    height: 1px;
+    left: 985px;
+    top: 816px;
+    background: #A3887B;
+  }
+
+  .slider-button {
+    position: absolute;
+    left: 375px;
+    top: 652px;
+    margin: 0;
+    order: initial;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header-container {
+    padding: 0 375px;
   }
 }
