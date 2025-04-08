@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@700&family=Wix+Madefor+Text&display=swap');
+
+body {
+  font-family: 'Wix Madefor Text', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 20px;
+
+}
+
+.about-house-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.about-house-title {
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  width: 188px;
+}
+
+.house-image {
+  width: 470px;
+  height: 470px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 60px;
+}
+
+.house-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.house-description {
+  flex: 1;
+}
+
+.content-block {
+  margin-top: 30px;
+}
+.address {
+  font-family: 'Wix Madefor Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #A3887B;
+  margin-bottom: 20px;
+}
+
+.description-text {
+  font-family: 'Wix Madefor Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #556877;
+  margin-bottom: 20px;
+}
+
+.description-text p {
+  margin-bottom: 15px;
+}
+
+.specs-container {
+  display: flex;
+  justify-content: left;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spec-card {
+  width: 270px;
+  height: 270px;
+  background: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+
+.corner-top-left {
+  left: 0;
+  top: 0;
+  border-top: 1px solid #DACFCA;
+  border-left: 1px solid #DACFCA;
+}
+
+.corner-top-right {
+  right: 0;
+  top: 0;
+  border-top: 1px solid #DACFCA;
+  border-right: 1px solid #DACFCA;
+}
+
+.corner-bottom-right {
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #DACFCA;
+  border-right: 1px solid #DACFCA;
+}
+
+.corner-bottom-left {
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #DACFCA;
+  border-left: 1px solid #DACFCA;
+}
+
+.spec-title {
+  font-family: 'Wix Madefor Text';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: #556877;
+  margin: 0 0 10px 0;
+}
+
+.spec-value {
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 100%;
+  text-align: center;
+  color: #A3887B;
+  margin: 10px 0;
+}
+
+.spec-subvalue {
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+  text-align: center;
+  color: #A3887B;
+  margin: 10px 0;
+}

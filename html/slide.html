@@ -2,115 +2,9 @@
 <html lang="ru">
 <head>
   <title>Слайдер</title>
+  <link rel="stylesheet" href="/css/slide.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <meta charset="UTF-8">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    .swiper-container {
-      width: 100%;
-      height: 990px;
-      position: relative;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper-wrapper {
-      box-sizing: border-box;
-    }
-
-    .swiper-slide {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    .swiper-slide iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .slider-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 70px;
-      height:700px;
-      z-index: 10;
-      cursor: pointer;
-      background: transparent !important;
-    }
-
-    .slider-nav::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #DACFCA;
-      background: transparent !important;
-      transition: all 0.3s ease;
-      box-sizing: border-box;
-    }
-
-    .slider-nav.prev {
-      left: -30px;
-    }
-    .slider-nav.prev::before {
-      border-top-right-radius: 55px 110px;
-      border-bottom-right-radius: 55px 110px;
-      border-left: none;
-      clip-path: ellipse(50% 100% at right);
-    }
-
-    .slider-nav.next {
-      right: -30px;
-    }
-    .slider-nav.next::before {
-      border-top-left-radius: 55px 110px;
-      border-bottom-left-radius: 55px 110px;
-      border-right: none;
-      clip-path: ellipse(50% 100% at left);
-    }
-
-    .slider-nav::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #DACFCA;
-      border-left: none;
-      border-bottom: none;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.3s ease;
-      background: transparent;
-    }
-
-    .slider-nav.prev::after {
-      transform: translateY(-50%) rotate(-135deg);
-      left: 40px;
-    }
-
-    .slider-nav.next::after {
-      transform: translateY(-50%) rotate(45deg);
-      right: 40px;
-    }
-
-    .slider-nav:hover::before {
-      border-color: #A3887B;
-    }
-
-    .slider-nav:hover::after {
-      border-color: #A3887B;
-      width: 22px;
-      height: 22px;
-    }
-  </style>
 </head>
 <body>
 <div class="swiper-container">
@@ -136,22 +30,6 @@
 </div>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 800,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.slider-nav.next',
-      prevEl: '.slider-nav.prev',
-    },
-  });
-</script>
+<script src="/js/slide.js"></script>
 </body>
 </html>
