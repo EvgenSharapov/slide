@@ -19,17 +19,6 @@ a {
 }
 
 header {
-  /*position: fixed;*/
-  /*width: 100%;*/
-  /*height: 80px;*/
-  /*left: 0;*/
-  /*top: 0;*/
-  /*background: #FFFBF9;*/
-  /*border-bottom: 1px solid #DACFCA;*/
-  /*z-index: 1000;*/
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
   position: fixed;
   width: 100%;
   min-height: 80px;
@@ -43,10 +32,6 @@ header {
 }
 
 .header-container {
-  /*width: 1920px;*/
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
   padding: 0 10%;
   width: 100%;
   max-width: 1920px;
@@ -54,18 +39,9 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /*gap: 20px;*/
 }
 
 .logo {
-  /*font-family: 'Wix Madefor Text';*/
-  /*font-style: normal;*/
-  /*font-weight: 800;*/
-  /*font-size: 18px;*/
-  /*line-height: 120%;*/
-  /*color: #2D3047;*/
-  /*width: 199px;*/
-  /*white-space: nowrap;*/
   font-family: 'Wix Madefor Text';
   font-weight: 800;
   font-size: clamp(16px, 1.2vw, 18px);
@@ -83,18 +59,10 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  /*margin: 0 40px;*/
-  /*order: 3;*/
-  /*width: 100%;*/
   margin: 15px 0 0;
 }
 
 nav ul {
-  /*display: flex;*/
-  /*list-style: none;*/
-  /*gap: 40px;*/
-  /*margin: 0;*/
-  /*padding: 0;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -103,17 +71,6 @@ nav ul {
 }
 
 nav a {
-  /*font-family: 'Wix Madefor Text';*/
-  /*font-style: normal;*/
-  /*font-weight: 400;*/
-  /*font-size: 16px;*/
-  /*line-height: 140%;*/
-  /*color: #556877;*/
-  /*position: relative;*/
-  /*height: 80px;*/
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*white-space: nowrap;*/
   font-size: clamp(14px, 1.1vw, 16px);
   color: #556877;
   position: relative;
@@ -149,15 +106,6 @@ nav a:hover::after {
 }
 
 .phone {
-  /*font-family: 'Alumni Sans';*/
-  /*font-style: normal;*/
-  /*font-weight: 700;*/
-  /*font-size: 30px;*/
-  /*line-height: 110%;*/
-  /*text-align: right;*/
-  /*color: #2D3047;*/
-  /*width: 100%;*/
-  /*white-space: nowrap;*/
   font-family: 'Alumni Sans';
   font-weight: 700;
   font-size: clamp(20px, 2vw, 30px);
@@ -166,15 +114,6 @@ nav a:hover::after {
 }
 
 .contact-link {
-  /*font-family: 'Wix Madefor Text';*/
-  /*font-style: normal;*/
-  /*font-weight: 500;*/
-  /*font-size: 14px;*/
-  /*line-height: 130%;*/
-  /*text-align: right;*/
-  /*color: #A3887B;*/
-  /*width: 100%;*/
-  /*transition: color 0.3s ease;*/
   font-size: clamp(12px, 0.9vw, 14px);
   color: #A3887B;
   transition: color 0.3s ease;
@@ -185,16 +124,10 @@ nav a:hover::after {
 }
 
 .slider {
-  /*position: absolute;*/
-  /*width: 1920px;*/
-  /*height: 860px;*/
-  /*left: 0;*/
   top: 80px;
   background: #FFFBF9;
   width: 100%;
   height: 860px;
-  /*padding: 100px 5% 60px;*/
-  /*margin-top: 80px;*/
   position: relative;
 }
 
@@ -207,26 +140,7 @@ nav a:hover::after {
   background: #EDE7E5;
 }
 
-/*.infrastructure-link {*/
-/*  position: absolute;*/
-/*  width: 270px;*/
-/*  height: 31px;*/
-/*  left: 1306px;*/
-/*  top: 760px;*/
-/*  font-family: 'Alumni Sans';*/
-/*  font-style: normal;*/
-/*  font-weight: 700;*/
-/*  font-size: 24px;*/
-/*  line-height: 130%;*/
-/*  color: #A3887B;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  gap: 10px;*/
-/*  transition: color 0.3s ease;*/
-/*}*/
-
 .infrastructure-link {
-  /* Общие стили */
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -238,7 +152,6 @@ nav a:hover::after {
   z-index: 50;
   text-decoration: none;
 
-  /* Стрелка */
   &::after {
     content: '';
     display: block;
@@ -251,7 +164,6 @@ nav a:hover::after {
     transition: inherit;
   }
 
-  /* Мобильные (320-767px) */
   @media (max-width: 767px) {
     position: relative;
     margin: 15px auto;
@@ -261,7 +173,6 @@ nav a:hover::after {
     justify-content: center;
   }
 
-  /* Планшеты (768-991px) */
   @media (min-width: 768px) and (max-width: 991px) {
     position: absolute;
     right: 5%;
@@ -269,7 +180,6 @@ nav a:hover::after {
     width: 240px;
   }
 
-  /* Ноутбуки (992-1199px) */
   @media (min-width: 992px) and (max-width: 1199px) {
     position: absolute;
     right: 180px;
@@ -277,7 +187,6 @@ nav a:hover::after {
     width: 250px;
   }
 
-  /* Средние десктопы (1200-1439px) */
   @media (min-width: 1200px) and (max-width: 1439px) {
     position: absolute;
     right: 220px;
@@ -285,7 +194,6 @@ nav a:hover::after {
     width: 260px;
   }
 
-  /* Ваш монитор (1440px) */
   @media (min-width: 1440px) {
     position: absolute;
     right: 260px;
@@ -293,7 +201,6 @@ nav a:hover::after {
     width: 270px;
   }
 
-  /* Большие экраны (1600-1919px) */
   @media (min-width: 1600px) and (max-width: 1919px) {
     position: absolute;
     right: calc(100px + (100% - 1440px) / 2);
@@ -301,7 +208,6 @@ nav a:hover::after {
     width: 270px;
   }
 
-  /* Full HD+ (1920px и более) */
   @media (min-width: 1920px) {
     position: absolute;
     right: calc(260px + (100% - 1440px) / 2);
@@ -309,7 +215,6 @@ nav a:hover::after {
     width: 270px;
   }
 
-  /* Ховер-эффект */
   &:hover {
     color: #8a7368;
     &::after {
@@ -338,54 +243,26 @@ nav a:hover::after {
   border-color: #8a7368;
 }
 
-/*.infrastructure-line {*/
-/*  position: absolute;*/
-/*  width: 590px;*/
-/*  height: 1px;*/
-/*  left: 985px;*/
-/*  top: 816px;*/
-/*  background: #A3887B;*/
-/*}*/
-
-/*.slider-image-container {*/
-/*  position: absolute;*/
-/*  width: 660px;*/
-/*  height: 740px;*/
-/*  left: 985px;*/
-/*  background: #D9D9D9;*/
-/*  border: 25px solid #FFFFFF;*/
-/*  border-radius: 1px;*/
-/*  overflow: hidden;*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*}*/
-
-
-/* Линия инфраструктуры */
 .infrastructure-line {
   position: absolute;
   height: 1px;
   background: #A3887B;
-  display: none; /* Скрываем на мобильных */
+  display: none;
 
-  /* Десктопная версия */
   @media (min-width: 992px) {
     display: block;
-    width: 40vw; /* Адаптивная ширина */
+    width: 40vw;
     max-width: 590px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 120px;
   }
 
-  /* Большие экраны */
   @media (min-width: 1200px) {
     width: 50vw;
     left: calc(50% - 100px);
   }
 
-  /* Ваше целевое разрешение 1440px */
   @media (min-width: 1440px) {
     width: 590px;
     left: 985px;
@@ -393,18 +270,16 @@ nav a:hover::after {
     transform: none;
   }
 
-  /* Full HD+ */
   @media (min-width: 1920px) {
     left: calc(985px + (100% - 1920px)/2);
   }
 }
 
-/* Контейнер изображения */
 .slider-image-container {
   position: relative;
   width: 90vw;
   max-width: 660px;
-  aspect-ratio: 660/740; /* Сохраняем пропорции */
+  aspect-ratio: 660/740;
   margin: 40px auto;
   background: #D9D9D9;
   border: 15px solid #FFFFFF;
@@ -414,12 +289,10 @@ nav a:hover::after {
   justify-content: center;
   align-items: center;
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     border-width: 20px;
   }
 
-  /* Десктопная версия */
   @media (min-width: 992px) {
     position: absolute;
     width: 45vw;
@@ -429,13 +302,11 @@ nav a:hover::after {
     margin: 0;
   }
 
-  /* Большие экраны */
   @media (min-width: 1200px) {
     width: 40vw;
     right: 8%;
   }
 
-  /* Ваше целевое разрешение 1440px */
   @media (min-width: 1440px) {
     width: 660px;
     height: 740px;
@@ -446,13 +317,10 @@ nav a:hover::after {
     border-width: 25px;
   }
 
-  /* Full HD+ */
   @media (min-width: 1920px) {
     left: calc(985px + (100% - 1920px)/2);
   }
 }
-
-
 
 .slider-image {
   width: 100%;
@@ -461,28 +329,6 @@ nav a:hover::after {
   object-position: center;
 }
 
-/*.slider-content {*/
-/*  position: absolute;*/
-/*  width: 621px;*/
-/*  height: 287px;*/
-/*  left: 375px;*/
-/*  top: 295px;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  gap: 30px;*/
-/*}*/
-
-/*.slider-title {*/
-/*  font-family: 'Alumni Sans';*/
-/*  font-style: normal;*/
-/*  font-weight: 700;*/
-/*  font-size: 100px;*/
-/*  line-height: 90%;*/
-/*  color: #2D3047;*/
-/*}*/
-
-
-/* Контейнер с контентом */
 .slider-content {
   position: relative;
   width: 90%;
@@ -494,13 +340,11 @@ nav a:hover::after {
   padding: 20px 0;
   z-index: 10;
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     width: 80%;
     padding: 40px 0;
   }
 
-  /* Десктопная версия */
   @media (min-width: 992px) {
     position: absolute;
     width: 40vw;
@@ -512,12 +356,10 @@ nav a:hover::after {
     padding: 0;
   }
 
-  /* Большие экраны */
   @media (min-width: 1200px) {
     left: 10%;
   }
 
-  /* Ваше целевое разрешение 1440px */
   @media (min-width: 1440px) {
     width: 621px;
     height: auto;
@@ -526,13 +368,11 @@ nav a:hover::after {
     transform: none;
   }
 
-  /* Full HD+ */
   @media (min-width: 1920px) {
     left: calc(375px + (100% - 1920px)/2);
   }
 }
 
-/* Заголовок */
 .slider-title {
   font-family: 'Alumni Sans';
   font-weight: 700;
@@ -540,29 +380,20 @@ nav a:hover::after {
   line-height: 1;
   margin: 0;
 
-  /* Размеры шрифта с плавным изменением */
   font-size: clamp(36px, 8vw, 100px);
 
-  /* Адаптивный межстрочный интервал */
   @media (max-width: 767px) {
     line-height: 0.9;
   }
 
-  /* Десктопная версия */
   @media (min-width: 992px) {
     line-height: 0.9;
   }
 
-  /* Перенос строк */
   .title-line {
     display: block;
   }
 }
-
-
-
-
-
 
 .club-house-title {
   position: absolute;
@@ -657,7 +488,7 @@ nav a:hover::after {
 }
 
 .slider-button:hover, .corner-button:hover {
-  background: #8a7368; /* Темнее на 15% */
+  background: #8a7368;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
