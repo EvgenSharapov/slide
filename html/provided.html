@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>В квартирах предусмотрено</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@700&family=Wix+Madefor+Text&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Wix Madefor Text', sans-serif;
+      color: #556877;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    .features-title {
+      font-family: 'Alumni Sans', sans-serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 80px;
+      text-align: center;
+      color: #2D3047;
+      margin: 0 0 60px 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-bottom: 30px;
+    }
+
+    .feature-card {
+      width: 270px;
+      height: 270px;
+      background: #FFFFFF;
+      position: relative;
+      border: none;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .feature-card::before,
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+
+    .feature-card::before {
+      top: 0;
+      left: 0;
+      border-top: 1px solid #DACFCA;
+      border-left: 1px solid #DACFCA;
+    }
+
+    .feature-card::after {
+      bottom: 0;
+      right: 0;
+      border-bottom: 1px solid #DACFCA;
+      border-right: 1px solid #DACFCA;
+    }
+
+    .corner-top-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-top: 1px solid #DACFCA;
+      border-right: 1px solid #DACFCA;
+    }
+
+    .corner-bottom-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-bottom: 1px solid #DACFCA;
+      border-left: 1px solid #DACFCA;
+    }
+
+    .corner-top-right {
+      right: 0;
+      top: 0;
+      border-top: 1px solid #DACFCA;
+      border-right: 1px solid #DACFCA;
+    }
+
+    .corner-bottom-left {
+      left: 0;
+      bottom: 0;
+      border-bottom: 1px solid #DACFCA;
+      border-left: 1px solid #DACFCA;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      height: 100%;
+    }
+
+    .feature-title {
+      font-family: 'Alumni Sans', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 130%;
+      color: #2D3047;
+      margin: 0;
+    }
+
+    .feature-description {
+      font-size: 18px;
+      line-height: 140%;
+      color: #556877;
+      margin: 0;
+    }
+
+    .contact-card {
+      width: 270px;
+      height: 270px;
+      position: relative;
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border: 1px solid #A3887B;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-phone {
+      font-family: 'Alumni Sans', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      color: #A3887B;
+      margin: 0;
+    }
+
+    .contact-text {
+      font-size: 18px;
+      line-height: 140%;
+      color: #556877;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .features-title {
+        font-size: 60px;
+        line-height: 60px;
+        margin-bottom: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card, .contact-card {
+        width: 100%;
+        max-width: 270px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <h2 class="features-title">В квартирах предусмотрено</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Индивидуальное отопление</h3>
+        <p class="feature-description"></p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Остекление</h3>
+        <p class="feature-description">Просторные витражные остекления до пола</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">«Спрятанные» коммуникации</h3>
+        <p class="feature-description">Трубы отопления находятся в полу</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Радиаторы отопления</h3>
+        <p class="feature-description">Расположены возле витражных окон в пространстве пола</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Кондиционер</h3>
+        <p class="feature-description">Запроектирована подготовка под установку</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Система пожарного оповещения</h3>
+        <p class="feature-description">Автоматизированная система. Приходит на пульт консьержу</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="corner-top-right"></div>
+      <div class="corner-bottom-left"></div>
+      <div class="feature-content">
+        <h3 class="feature-title">Видео наблюдение</h3>
+        <p class="feature-description">придомовой территории и мест общего пользования</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <p class="contact-phone">8 964 198-46-73</p>
+      <p class="contact-text">Обращайтесь по всем вопросам</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

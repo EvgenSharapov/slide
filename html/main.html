@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клубный дом «Южная жемчужина»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFBF9;
+            color: #2D3047;
+            font-family: 'Wix Madefor Text', sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 80px;
+            left: 0;
+            top: 0;
+            background: #FFFBF9;
+            border-bottom: 1px solid #DACFCA;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 1920px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 375px;
+        }
+
+        .logo {
+            font-family: 'Wix Madefor Text';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 120%;
+            color: #2D3047;
+            width: 199px;
+            white-space: nowrap;
+        }
+
+        .logo-line1 {
+            display: block;
+        }
+        .logo-line2 {
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 0 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            font-family: 'Wix Madefor Text';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #556877;
+            position: relative;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: #A3887B;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #A3887B;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+            min-width: 180px;
+        }
+
+        .phone {
+            font-family: 'Alumni Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 110%;
+            text-align: right;
+            color: #2D3047;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        .contact-link {
+            font-family: 'Wix Madefor Text';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: right;
+            color: #A3887B;
+            width: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #8a7368;
+        }
+
+        .slider {
+            position: absolute;
+            width: 1920px;
+            height: 860px;
+            left: 0;
+            top: 80px;
+            background: #FFFBF9;
+        }
+
+        .slider-dark-bg {
+            position: absolute;
+            width: 660px;
+            height: 425px;
+            left: 945px;
+            top: 445px;
+            background: #EDE7E5;
+        }
+
+        .infrastructure-link {
+            position: absolute;
+            width: 270px;
+            height: 31px;
+            left: 1306px;
+            top: 760px;
+            font-family: 'Alumni Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 130%;
+            color: #A3887B;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .infrastructure-link:hover {
+            color: #8a7368;
+        }
+
+        .infrastructure-link::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #A3887B;
+            transform: rotate(45deg);
+            border-left: none;
+            border-bottom: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .infrastructure-link:hover::after {
+            border-color: #8a7368;
+        }
+
+        .infrastructure-line {
+            position: absolute;
+            width: 590px;
+            height: 1px;
+            left: 985px;
+            top: 816px;
+            background: #A3887B;
+        }
+
+        .slider-image-container {
+            position: absolute;
+            width: 660px;
+            height: 740px;
+            left: 985px;
+            background: #D9D9D9;
+            border: 25px solid #FFFFFF;
+            border-radius: 1px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .slider-content {
+            position: absolute;
+            width: 621px;
+            height: 287px;
+            left: 375px;
+            top: 295px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .slider-title {
+            font-family: 'Alumni Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 100px;
+            line-height: 90%;
+            color: #2D3047;
+        }
+
+        .club-house-title {
+            position: absolute;
+            left: 375px;
+            top: 200px;
+            font-family: 'Alumni Sans', sans-serif;
+            padding-left: 110px;
+            z-index: 10;
+        }
+
+        .title-figure {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 180px;
+            height: 100px;
+        }
+
+        .title-square {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 60px;
+            top: -5px;
+            background: #DACFCA;
+            border-radius: 1px;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .title-square::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: -80px;
+            top: -10px;
+            background: #A3887B;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .line1, .line2 {
+            position: relative;
+            z-index: 3;
+        }
+        .line1 {
+            display: block;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2D3047;
+        }
+        .line2 {
+            display: block;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2D3047;
+            margin-top: 5px;
+        }
+
+        .slider-button, .corner-button {
+            position: absolute;
+            width: 239px;
+            height: 60px;
+            background: #A3887B;
+            border-radius: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Wix Madefor Text';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 140%;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 20;
+        }
+
+        .slider-button {
+            left: 375px;
+            top: 652px;
+        }
+
+        .corner-button {
+            right:5px;
+            bottom: 40px;
+        }
+
+        .slider-button:hover, .corner-button:hover {
+            background: #8a7368; /* Темнее на 15% */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-button:active, .corner-button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        @media (max-width: 1919px) {
+            header, .slider {
+                width: 100%;
+            }
+            header {
+                padding: 0 5%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            nav ul {
+                gap: 20px;
+            }
+            .slider-title {
+                font-size: 80px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header {
+                height: auto;
+                padding: 15px;
+                flex-wrap: wrap;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .slider {
+                position: relative;
+                height: auto;
+                top: auto;
+                padding-top: 80px;
+            }
+            .slider-content, .club-house-title,
+            .slider-dark-bg, .slider-image-container,
+            .infrastructure-link, .infrastructure-line {
+                position: relative;
+                width: 100%;
+                left: auto;
+                top: auto;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <span class="logo-line1">Клубный дом</span>
+            <span class="logo-line2">«Южная жемчужина»</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">О доме</a></li>
+                <li><a href="#">Планировки</a></li>
+                <li><a href="#">Инфраструктура</a></li>
+                <li><a href="#">Отделка</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="contacts">
+            <div class="phone">8 964 196-46-73</div>
+            <a href="#" class="contact-link">Связаться со мной</a>
+        </div>
+    </div>
+</header>
+
+<div class="slider">
+    <div class="slider-dark-bg"></div>
+
+    <a href="#" class="infrastructure-link">Смотреть инфраструктуру</a>
+    <div class="infrastructure-line"></div>
+
+    <div class="slider-content">
+        <h1 class="slider-title">
+            <span class="title-line">Комфортное</span>
+            <span class="title-line">жильё бизнес-</span>
+            <span class="title-line">класса</span>
+        </h1>
+    </div>
+
+    <h2 class="club-house-title">
+        <div class="title-figure">
+            <div class="title-circle"></div>
+            <div class="title-square"></div>
+        </div>
+        <span class="line1">Клубный дом</span>
+        <span class="line2">«Южная жемчужина»</span>
+    </h2>
+
+    <a href="#" class="slider-button">Смотреть планировку</a>
+    <a href="#" class="corner-button">Квартиры в наличии</a>
+
+
+    <div class="slider-image-container">
+        <img src="../img/7_Photo - 3.png" alt="Квартира" class="slider-image">
+    </div>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
